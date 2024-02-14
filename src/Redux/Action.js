@@ -27,7 +27,7 @@ export const fetchUserThunk = () => {
     await axios
       .get("http://localhost:8000/users")
       .then((res) => {
-        const users = res.json()
+        const users = res.data
         dispatch(fetchsuccess(users))
       })
       .catch((err) => {
