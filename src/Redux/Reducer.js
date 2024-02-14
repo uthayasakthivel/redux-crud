@@ -1,4 +1,4 @@
-import { fetchusers, fetchsuccess, fetchfailure } from "./Action"
+import { FETCHUSERS, FETCHSUCCESS, FETCHFAILURE } from "./ActionType"
 
 const initialState = {
   loading: true,
@@ -8,24 +8,13 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case fetchusers: {
-      return {
-        ...state,
-      }
-    }
-    case fetchsuccess: {
-      return {
-        loading: false,
-        data: action.paylod,
-        error: false,
-      }
-    }
-    case fetchfailure: {
-      return {
-        loading: false,
-        data: [],
-        err: action.payload,
-      }
-    }
+    case FETCHUSERS:
+      return { ...state }
+    case FETCHSUCCESS:
+      return { loading: false, data: action.payload, error: false }
+    case FETCHFAILURE:
+      return { loading: false, data: [], error: action.payload }
+    default:
+      return state
   }
 }
