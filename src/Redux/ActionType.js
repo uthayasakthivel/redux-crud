@@ -1,0 +1,3 @@
+export const FETCHUSERS = "FETCHUSERS"
+export const FETCHSUCCESS = "FETCHSUCCESS"
+export const FETCHFAILURE = "FETCHFAILURE"
