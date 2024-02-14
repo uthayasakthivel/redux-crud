@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchUserThunk } from "../Redux/Action"
+import TableRow from "./TableRow"
 
 const EmployeeList = () => {
   const dispatch = useDispatch()
@@ -8,17 +9,13 @@ const EmployeeList = () => {
 
   useEffect(() => {
     dispatch(fetchUserThunk())
-  }, [])
+  }, [dispatch])
 
   //   console.log(users)
 
   return (
     <div>
-      {users.map((user) => (
-        <div key={user.id}>
-          <h1>{user.name}</h1>
-        </div>
-      ))}
+      <TableRow users={users} />
     </div>
   )
 }

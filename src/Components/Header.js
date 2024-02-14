@@ -1,6 +1,6 @@
 import React from "react"
 import { FaCircleMinus, FaCirclePlus } from "react-icons/fa6"
-
+import { Link } from "react-router-dom"
 const Header = () => {
   return (
     <div className="flex justify-between items-center bg-[#425c7d] text-white p-10 text-3xl">
@@ -9,14 +9,20 @@ const Header = () => {
         Employees
       </div>
       <div className="flex gap-5 justify-between items-center">
-        <button className="flex justify-between items-center bg-[#d9534f] px-5 py-3">
+        <Link
+          to=""
+          className="flex justify-between items-center bg-[#d9534f] px-5 py-3 no-underline text-white"
+        >
           <FaCircleMinus className="mx-3" />
-          Delete
-        </button>
-        <button className="flex justify-between items-center bg-[#5db85d] px-5 py-3">
+          Bulk Delete
+        </Link>
+        <Link
+          to="/add-employee"
+          className="flex justify-between items-center bg-[#5db85d] px-5 py-3 no-underline text-white"
+        >
           <FaCirclePlus className="mx-3" />
           Add New Employee
-        </button>
+        </Link>
       </div>
     </div>
   )
