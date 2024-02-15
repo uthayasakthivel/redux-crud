@@ -1,6 +1,7 @@
 import React from "react"
 import { MdModeEdit } from "react-icons/md"
 import { AiFillDelete } from "react-icons/ai"
+import { Link } from "react-router-dom"
 const TableRow = ({ users }) => {
   return (
     <>
@@ -24,14 +25,20 @@ const TableRow = ({ users }) => {
               </td> */}
               <td className="table-cells">{user.phone}</td>
               <td className="table-cells ">
-                <tr className="flex justify-evenly">
-                  <td>
+                <div className="flex justify-evenly">
+                  {/* <Link to={`/update-employee/${user.id}`}>
                     <MdModeEdit color="#ffc828" />
-                  </td>
-                  <td>
+                  </Link> */}
+                  <Link
+                    to={`/update-employee/${user.id}`}
+                    state={{ userId: user.id }}
+                  >
+                    <MdModeEdit color="#ffc828" />
+                  </Link>
+                  <Link to={`/${user.id}`}>
                     <AiFillDelete color="#f55b4f" />
-                  </td>
-                </tr>
+                  </Link>
+                </div>
               </td>
             </tr>
           ))}
