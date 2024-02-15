@@ -1,6 +1,6 @@
-.table-cell {
+.table-cells {
     border: 1px solid #ddd;
-    padding: 10px 15px;
+    padding: 20px 30px;
   }
 
   tbody > tr:nth-child(2){

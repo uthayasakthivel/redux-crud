@@ -1,4 +1,4 @@
-import { FETCHUSERS, FETCHSUCCESS, FETCHFAILURE } from "./ActionType"
+import { FETCHUSERS, FETCHSUCCESS, FETCHFAILURE, ADDUSER } from "./ActionType"
 
 const initialState = {
   loading: true,
@@ -14,6 +14,8 @@ export const reducer = (state = initialState, action) => {
       return { loading: false, data: action.payload, error: false }
     case FETCHFAILURE:
       return { loading: false, data: [], error: action.payload }
+    case ADDUSER:
+      return { ...state, data: [...state.data, action.payload] }
     default:
       return state
   }

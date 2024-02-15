@@ -1,4 +1,4 @@
-import { FETCHUSERS, FETCHSUCCESS, FETCHFAILURE } from "./ActionType"
+import { FETCHUSERS, FETCHSUCCESS, FETCHFAILURE, ADDUSER } from "./ActionType"
 import axios from "axios"
 
 export const fetchusers = () => {
@@ -18,6 +18,13 @@ export const fetchfailure = (err) => {
   return {
     type: FETCHFAILURE,
     payload: err,
+  }
+}
+
+export const addUser = (data) => {
+  return {
+    type: ADDUSER,
+    payload: data,
   }
 }
 
