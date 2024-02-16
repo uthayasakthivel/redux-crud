@@ -8,10 +8,12 @@ const EmployeeList = () => {
   const users = useSelector((state) => state.data)
 
   useEffect(() => {
-    dispatch(fetchUserThunk())
-  }, [dispatch])
+    if (users.length === 0) {
+      dispatch(fetchUserThunk())
+    }
+  }, [])
 
-  //   console.log(users)
+  console.log("from employee", users)
 
   return (
     <div>
