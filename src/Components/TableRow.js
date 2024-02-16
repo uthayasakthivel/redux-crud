@@ -2,7 +2,27 @@ import React from "react"
 import { MdModeEdit } from "react-icons/md"
 import { AiFillDelete } from "react-icons/ai"
 import { Link } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { updateUser } from "../Redux/Action"
+
 const TableRow = ({ users }) => {
+  const allUser = useSelector((state) => state.data)
+  const dispatch = useDispatch()
+  const handleDelete = (userId) => {
+    // alert(userId)
+    // const [willdeleteUser] = allUser.filter(
+    //   (EachUser) => EachUser.id === userId
+    // )
+
+    const newUsers = allUser.filter((EachUser) => EachUser.id !== userId)
+    dispatch(updateUser(newUsers))
+
+    // const willdeleteUserIndex = allUser.findIndex((eachUser) => eachUser.id === userId)
+    // if(willdeleteUserIndex !== -1) {
+    //   allUser[willdeleteUserIndex]
+    // }
+  }
+
   return (
     <>
       <table className="w-full border-collapse text-2xl">
@@ -35,9 +55,9 @@ const TableRow = ({ users }) => {
                   >
                     <MdModeEdit color="#ffc828" />
                   </Link>
-                  <Link to={`/${user.id}`}>
+                  <button onClick={() => handleDelete(user.id)}>
                     <AiFillDelete color="#f55b4f" />
-                  </Link>
+                  </button>
                 </div>
               </td>
             </tr>

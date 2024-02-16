@@ -10,13 +10,6 @@ const Header = () => {
       </div>
       <div className="flex gap-5 justify-between items-center">
         <Link
-          to=""
-          className="flex justify-between items-center bg-[#d9534f] px-5 py-3 no-underline text-white"
-        >
-          <FaCircleMinus className="mx-3" />
-          Bulk Delete
-        </Link>
-        <Link
           to="/add-employee"
           className="flex justify-between items-center bg-[#5db85d] px-5 py-3 no-underline text-white"
         >

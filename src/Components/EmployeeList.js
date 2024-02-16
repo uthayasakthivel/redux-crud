@@ -11,7 +11,7 @@ const EmployeeList = () => {
     if (users.length === 0) {
       dispatch(fetchUserThunk())
     }
-  }, [users])
+  }, [])
 
   console.log("from employee", users)
 
